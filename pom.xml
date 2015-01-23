@@ -1,9 +1,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>com.predic8</groupId>
 	<artifactId>xmlbeautifier</artifactId>
 	<version>1.2.1</version>
+	<packaging>jar</packaging>
+
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>XML Pretty Printer for plain Text and HTML</description>
+	<url>https://github.com/membrane/xmlbeautifier</url>
+
+	<licenses>
+		<license>
+			<name>GNU GENERAL PUBLIC LICENSE Version 2</name>
+			<url>https://www.gnu.org/licenses/gpl-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Thomas Bayer</name>
+			<email>bayer@predic8.de</email>
+			<organization>Predic8</organization>
+			<organizationUrl>http://www.predic8.de/</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git@github.com:membrane/xmlbeautifier.git</connection>
+		<developerConnection>scm:git:git@github.com:membrane/xmlbeautifier.git</developerConnection>
+		<url>git@github.com:membrane/xmlbeautifier.git</url>
+	</scm>
 
 	<dependencies>
 		<dependency>
@@ -24,7 +52,6 @@
 			<version>1.7R2</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<repositories>
@@ -44,13 +71,36 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.11</version>
 				<configuration>
 					<test>**/*Test.java</test>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -65,4 +115,6 @@
 			<url>http://maven.predic8.com/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+
 </project>
+
