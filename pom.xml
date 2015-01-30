@@ -30,7 +30,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:membrane/xmlbeautifier.git</connection>
 		<developerConnection>scm:git:git@github.com:membrane/xmlbeautifier.git</developerConnection>
-		<url>git@github.com:membrane/xmlbeautifier.git</url>
+		<url>https://github.com/membrane/xmlbeautifier</url>
 	</scm>
 
 	<properties>
