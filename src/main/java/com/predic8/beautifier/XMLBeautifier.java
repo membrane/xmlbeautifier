@@ -41,6 +41,7 @@ public class XMLBeautifier {
 
 	public void parse(Reader reader) throws Exception {
 		XMLInputFactory factory = XMLInputFactory.newInstance();
+		factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
 		parse(factory.createXMLStreamReader(reader));
 	}
 
